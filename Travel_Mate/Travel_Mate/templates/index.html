@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Hielo by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Swipe Tourism</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css')}}">
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="{{url_for('mainpage')}}">Swipe Tourism <span>by Felix & Andrew</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="{{url_for('mainpage')}}">Home</a></li>
+				<li><a href="{{url_for('liked')}}">Liked Places</a></li>
+				<li><a href="{{url_for('generic')}}">Find Places</a></li>
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+            </ul>
+        </nav>
+
+		<!-- Banner -->
+			<section class="banner full">
+				<article>
+					<img src="{{ url_for('static', filename='images/City.png') }}" alt="" />
+					<div class="inner">
+						<header class="headerClass">
+							<h2>Find A New Place To Travel!</h2>
+							<h2><a style="color: rgb(5, 217, 255); text-shadow: 4px 4px black;" href="{{ url_for('register') }}">Register</a>/<a style="color: rgb(5, 217, 255); text-shadow: 4px 4px black;" href="{{ url_for('login') }}">Log In</a></h2>
+						</header>
+					</div>
+				</article>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{{ url_for('static', filename='images/Tokyo.jpg') }}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>Felix's Favorite</p>
+										<h2>Tokyo, Japan</h2>
+									</header>
+									<p> One of the most unforgetable experiances that I had was in the TeamLab Borderless Museum. Going through this museum is like stepping into another dimension. There are amazing visuals that pictures can never do justice. </p>
+									<footer class="align-center">
+										<a href="#" class="button alt">Learn More</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{{ url_for('static', filename='images/HighLine.jpg') }}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>Andrew's Favorite'</p>
+										<h2>Manhattan, New York City</h2>
+									</header>
+									<p> Manhattan is a place filled with people. There are tons of different tourist attractions that can fit anyones wants. One of my personal favorites is called "The High Line". It's a beautiful park that I love to wonder through with my family. </p>
+									<footer class="align-center">
+										<a href="#" class="button alt">Learn More</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section  id="two" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Our Hackathon Project</h2>
+						<p>HackNJIT 2020</p>
+					</header>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section style="padding-top: 75px;" id="three" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p style="color:rgb(88, 88, 88);" class="special"> For this years NJIT Hackathon we decided to create an easy way to look for a place to travel around the world. When we asked ourselves "If you could go anywhere in the world, where would you go?", we would say places like Paris or Abu Dhabi. But we didn't know much about the many things we could do when we got there or how to find new people who wanted to explore together. So we decided to create this website. Here you can search for fun activities to do in places you are interested in traveling to, while also finding new friends along the way! </p>
+						<h2>Our Hacking Setups</h2>
+					</header>
+					<div class="gallery">
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{{ url_for('static', filename='images/setupF.png') }}" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{{ url_for('static', filename='images/bs16.png') }}" alt="" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+					</ul>
+			</footer>
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/skel.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/util.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>

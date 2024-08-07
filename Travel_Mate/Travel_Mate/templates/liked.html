@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html style="background-image: url(../static/images/chalkboard.jpg);">
+	<head>
+		<title>Swipe Tourism</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/card.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css')}}">
+        <style>
+            .container {padding: 2rem 0rem;}
+			h4 {margin: 2rem 0rem 1rem;}
+			img {
+				max-width: 10em;
+				height: auto;
+				padding-bottom: 0%;
+				padding-top: 5%;
+				}
+			td{
+				padding-top: 5%;
+				padding-bottom: 10%;
+				color:white;
+				font-size: 30px;
+				vertical-align: middle;
+			}
+			th{
+				color:white;
+			}
+        </style>
+	</head>
+	<body style="background-image: url(../static/images/chalkboard.jpg);" class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{{url_for('mainpage')}}">Swipe Tourism <span>by Felix & Andrew</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav  id="menu">
+				<ul class="links">
+					<li><a href="{{url_for('mainpage')}}">Home</a></li>
+					<li><a href="{{url_for('liked')}}">Liked Places</a></li>
+					<li><a href="{{url_for('generic')}}">Find Places</a></li>
+                	<li><a href="{{url_for('logout')}}">Logout</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section style=" padding-top:2em ; padding-bottom: 1em;background-image: url('https://i.imgur.com/RASQmSP.jpg'); "; id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Explore the World</h2>
+					</header>
+				</div>
+			</section>
+			<div class="container">
+                <div class="row">
+                  <div class="col-12">
+                      <table class="table table-image">
+                        <thead>
+                          <tr>
+                            <th style="color:white; font-size: 20px;" scope="col">Picture</th>
+                            <th style="color:white; font-size: 20px;" scope="col">Name</th>
+                            <th style="color:white; font-size: 20px;" scope="col">Address</th>
+                            <th style="color:white; font-size: 20px;" scope="col">Rating</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+							{% for i in range(places|length) %}
+							<tr>
+								<td class="w-25">
+									<img src="{{ places[i]['photo']}}">
+								</td>
+								<td>{{ places[i]['name'] }}</td>
+								<td>{{ places[i]['address'] }}</td>
+						  	</tr>
+							{% endfor %}
+                        </tbody>
+                      </table>   
+                  </div>
+                </div>
+              </div>
+			<!--</section>-->
+
+		<!-- Footer 
+			<footer style="background-image: url('https://i.imgur.com/RASQmSP.jpg');"id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved.
+				</div>
+			</footer>
+		-->
+
+		
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/skel.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/util.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>
